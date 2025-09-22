@@ -1,5 +1,5 @@
-// proyecto MULTITAREAS
 
+// proyecto TAREAS
 // implemmentacion de una clase tarea con id y nombre
 // actividades o  tareas
 
@@ -14,39 +14,32 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
+
+import javax.swing.JOptionPane;
+
 import java.swing.*;
 
 public class Tareas{
-    //
-    private int id;
-    private String nombre;
-
-    public Tarea(int id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    @Override
-    public String toString() {
-        return "Tarea{id=" + id + ", nombre='" + nombre + "'}";
-    }
     public static void main(String[] args) {
-        List<Tarea> tareas = new ArrayList<>();
-
-        tareas.add(new Tarea(1, "Comprar pan"));
-        tareas.add(new Tarea(2, "Estudiar Java"));
-        tareas.add(new Tarea(3, "Llamar a mamá"));
-
-        for (Tarea tarea : tareas) {
-            System.out.println(tarea);
-        }
+    	String men="";
+    	int op;
+    	Solucion sol=new Solucion();
+    	Personas p=null,u=null,pm=null,pf=null;
+    	do{
+    		men=JOptionPane.showInputDialog("1.- ACCERDER \n2.- CREAR CUENTA\n3.-\nElija opcion");
+    		op=Integer.parseInt(men);
+    		/*switch(op){
+    			case 1: p=sol.ingreso(p,u); 
+    				    break;
+    			case 2: sol.ver(p,"\nLista Original\n");
+    				    break;
+    			case 3: pm=sol.pasar(p,null,null,"m");
+    			        pf=sol.pasar(p,null,null,"f");
+    			        sol.ver(p,"\nLista Original\n");
+    			        sol.ver(pm,"\nLista Hombres\n");
+    			        sol.ver(pf,"\nLista Mujeres\n");
+    				    break;
+    		}*/
+    	}while(op!=4);
     }
 }
