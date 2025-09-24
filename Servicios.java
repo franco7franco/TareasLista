@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Servicios {
-    private TareaDB dao = new TaskDAO();
+    private TareaDB dao = new TareaDB();
 
     public TaskService() {
         dao.createTable();
@@ -15,7 +15,7 @@ public class Servicios {
     public void crearTarea(String titulo, String estado, LocalDateTime fechaHora, String prioridad,
                            String categoria, String recordatorio, String zonaHoraria,
                            String preferenciasNotificacion, String temaVista) {
-        Tarea t = new Task(titulo, estado, fechaHora, prioridad, categoria, recordatorio, zonaHoraria, preferenciasNotificacion, temaVista);
+        Tarea t = new Tarea(titulo, estado, fechaHora, prioridad, categoria, recordatorio, zonaHoraria, preferenciasNotificacion, temaVista);
         dao.insert(t);
     }
 
@@ -27,3 +27,4 @@ public class Servicios {
         dao.deleteByEstado(estado);
     }
 }
+
