@@ -2,25 +2,16 @@ package model;
 
 import java.time.LocalDateTime;
 
-public class Tarea {
-    private int id;
-    private String titulo;
-    private String estado; // pendiente, completada, retrasada
+public class Tareas {
+    private int id, titulo, estado; 
     private LocalDateTime fechaHora;
-    private String prioridad; // alta, media, baja
-    private String categoria;
-    private String recordatorio; // texto o formato de notificación
-    private String zonaHoraria;
-    private String preferenciasNotificacion; // email, push, sonido
-    private String temaVista; // filtros o vistas guardadas
+    private String prioridad,categoria, recordatorio, zonaHoraria, preferencia, temaVista;
 
-    // Constructor vacío
-    public Tarea() {}
+    public Tareas() {}
 
-    // Constructor completo
-    public Tarea(String titulo, String estado, LocalDateTime fechaHora, String prioridad,
+    public Tareas(String titulo, String estado, LocalDateTime fechaHora, String prioridad,
                 String categoria, String recordatorio, String zonaHoraria,
-                String preferenciasNotificacion, String temaVista) {
+                String preferencia, String temaVista) {
         this.titulo = titulo;
         this.estado = estado;
         this.fechaHora = fechaHora;
@@ -28,11 +19,10 @@ public class Tarea {
         this.categoria = categoria;
         this.recordatorio = recordatorio;
         this.zonaHoraria = zonaHoraria;
-        this.preferenciasNotificacion = preferenciasNotificacion;
+        this.preferencia = preferencia;
         this.temaVista = temaVista;
     }
-
-    // Getters y setters...
 }
+
 
 
