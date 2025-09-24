@@ -1,5 +1,4 @@
 package dao;
-
 import model.Task;
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -7,21 +6,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskDB {
+public class TareDB {
 
     public void createTable() {
         String sql = """
             CREATE TABLE IF NOT EXISTS tasks (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                titulo TEXT NOT NULL,
-                estado TEXT,
-                fechaHora TEXT,
-                prioridad TEXT,
-                categoria TEXT,
-                recordatorio TEXT,
-                zonaHoraria TEXT,
-                preferenciasNotificacion TEXT,
-                temaVista TEXT
+          id INTEGER PRIMARY KEY AUTOINCREMENT,           -- Identificador único de la tarea
+          titulo TEXT NOT NULL,                           -- Título de la tarea (obligatorio)
+          estado TEXT,                                    -- Estado de la tarea (por ejemplo: pendiente, completada)
+          fechaHora TEXT,                                 -- Fecha y hora asociada a la tarea
+          prioridad TEXT,                                 -- Nivel de prioridad (alta, media, baja)
+          categoria TEXT,                                 -- Categoría de la tarea (trabajo, personal, etc.)
+          recordatorio TEXT,                              -- Información sobre recordatorios
+          zonaHoraria TEXT,                               -- Zona horaria de la tarea
+          preferenciasNotificacion TEXT,                  -- Preferencias de notificación
+          temaVista TEXT                                  -- Tema visual o estilo de presentación
             )
         """;
         try (Connection conn = DBConnection.connect();
@@ -89,3 +88,4 @@ public class TaskDB {
         }
     }
 }
+
