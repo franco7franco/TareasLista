@@ -8,7 +8,7 @@ import java.util.List;
 public class Servicios {
     private TareaDB dao = new TareaDB();
 
-    public TaskService() {
+    public Servicios() {
         dao.createTable();
     }
 
@@ -27,4 +27,5 @@ public class Servicios {
         dao.deleteByEstado(estado);
     }
 }
+
 
