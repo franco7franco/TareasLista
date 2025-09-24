@@ -2,7 +2,7 @@ import service.TaskService;
 import model.Task;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TareaGithub {
     public static void main(String[] args) {
@@ -43,7 +43,7 @@ public class TareaGithub {
                 case 2 -> {
                     System.out.print("Estado a filtrar: ");
                     String estado = sc.nextLine();
-                    List<Tarea> tareas = service.filtrarPorEstado(estado);
+                    List<Tareas> tareas = service.filtrarPorEstado(estado);
                     tareas.forEach(t -> System.out.println(t.getId() + " - " + t.getTitulo() + " [" + t.getEstado() + "]"));
                 }
                 case 3 -> {
@@ -55,8 +55,8 @@ public class TareaGithub {
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 0);
-
         sc.close();
     }
 }
+
 
