@@ -6,10 +6,9 @@ import java.util.Scanner;
 
 public class TareaGithub {
     public static void main(String[] args) {
-        Servicios service = new TaskService();
+        Servicios service = new Servicios();
         Scanner sc = new Scanner(System.in);
         int opcion;
-
         do {
             System.out.println("=== GESTOR DE TAREAS ===");
             System.out.println("1. Crear tarea");
@@ -60,3 +59,4 @@ public class TareaGithub {
         sc.close();
     }
 }
+
